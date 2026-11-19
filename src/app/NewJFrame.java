@@ -13,12 +13,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI Builder");
-        getContentPane().setLayout(new java.awt.FlowLayout());
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.X_AXIS));
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -28,11 +28,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
 
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2);
-
         jButton3.setText("jButton3");
         getContentPane().add(jButton3);
+
+        jButton2.setText("jButton2");
+        getContentPane().add(jButton2);
 
         pack();
         setLocationRelativeTo(null);

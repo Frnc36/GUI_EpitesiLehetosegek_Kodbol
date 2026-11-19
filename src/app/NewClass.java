@@ -3,6 +3,8 @@ package app;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -20,7 +22,8 @@ public class NewClass {
                 JFrame frame = new JFrame("GUI kódboól");
                 frame.setSize(320, 240);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame.EXIT_ON_CLOSE = 3
-                frame.setLayout(new FlowLayout());
+                //frame.setLayout(new FlowLayout(FlowLayout.LEFT)); //balra igazit
+                frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
                 
                 JButton btn2 = new JButton("gomb2");
                 JButton btn3 = new JButton("gomb3");
@@ -29,6 +32,7 @@ public class NewClass {
                 
                 JButton btn1 = new JButton("klikk ide");
                 frame.add(btn1);
+                frame.add(Box.createHorizontalGlue()); //vizszintes térköz beállítás
                 btn1.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         //                          a frame közepén fog megjelenni, ha null akkor a képernyő közepén
