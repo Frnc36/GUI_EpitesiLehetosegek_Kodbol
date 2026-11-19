@@ -1,5 +1,6 @@
 package app;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -25,24 +26,25 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnUjGomb = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUI Builder");
 
         pnlGombok.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        pnlGombok.setLayout(new java.awt.GridLayout(0, 3, 5, 5));
+        pnlGombok.setLayout(new java.awt.BorderLayout());
 
         jButton4.setText("jButton4");
-        pnlGombok.add(jButton4);
+        pnlGombok.add(jButton4, java.awt.BorderLayout.CENTER);
 
         jButton3.setText("jButton3");
-        pnlGombok.add(jButton3);
+        pnlGombok.add(jButton3, java.awt.BorderLayout.PAGE_START);
 
         jButton2.setText("jButton2");
-        pnlGombok.add(jButton2);
+        pnlGombok.add(jButton2, java.awt.BorderLayout.PAGE_END);
 
         jButton5.setText("jButton5");
-        pnlGombok.add(jButton5);
+        pnlGombok.add(jButton5, java.awt.BorderLayout.LINE_END);
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -50,12 +52,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        pnlGombok.add(jButton1);
+        pnlGombok.add(jButton1, java.awt.BorderLayout.LINE_START);
 
         btnUjGomb.setText("Új Gomb");
+        btnUjGomb.setEnabled(false);
         btnUjGomb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUjGombActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("BoxLayout");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
             }
         });
 
@@ -67,17 +77,22 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlGombok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnUjGomb)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUjGomb)
+                    .addComponent(jButton6))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUjGomb)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnUjGomb)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton6))
                     .addComponent(pnlGombok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,6 +122,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_btnUjGombActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        pnlGombok.setLayout(new GridLayout(0,3,5,5));
+        btnUjGomb.setEnabled(true);
+        this.revalidate(); //pack() helyett, de ez mag tartja a változtatásokat
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -147,6 +168,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JPanel pnlGombok;
     // End of variables declaration//GEN-END:variables
 }
