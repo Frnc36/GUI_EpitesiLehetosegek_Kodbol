@@ -1,5 +1,6 @@
 package app;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -19,10 +20,16 @@ public class NewClass {
                 JFrame frame = new JFrame("GUI kódboól");
                 frame.setSize(320, 240);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame.EXIT_ON_CLOSE = 3
+                frame.setLayout(new FlowLayout());
                 
-                JButton btn = new JButton("klikk ide");
-                frame.add(btn);
-                btn.addActionListener(new ActionListener() {
+                JButton btn2 = new JButton("gomb2");
+                JButton btn3 = new JButton("gomb3");
+                frame.add(btn2);
+                frame.add(btn3);
+                
+                JButton btn1 = new JButton("klikk ide");
+                frame.add(btn1);
+                btn1.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         //                          a frame közepén fog megjelenni, ha null akkor a képernyő közepén
                         JOptionPane.showMessageDialog(frame, "klikkeltél!");
