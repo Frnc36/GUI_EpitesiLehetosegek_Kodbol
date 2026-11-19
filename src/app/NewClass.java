@@ -22,10 +22,12 @@ public class NewClass {
                 
                 JButton btn = new JButton("klikk ide");
                 frame.add(btn);
-                btn.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent e){
+                btn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
                         //                          a frame közepén fog megjelenni, ha null akkor a képernyő közepén
-                    JOptionPane.showMessageDialog(frame, "klikkeltél!");};
+                        JOptionPane.showMessageDialog(frame, "klikkeltél!");
+                    }
+                ;
                 });
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
